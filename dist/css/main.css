@@ -7,11 +7,23 @@
 
 body {
   background: #272727;
-  font-weight: 700;
   color: #fff;
 }
 
 .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 80%;
   margin: 0 auto;
 }
@@ -22,5 +34,10 @@ body {
 
 .main .main__paragraph:hover {
   color: red;
+}
+
+.light {
+  background: white;
+  color: black;
 }
 /*# sourceMappingURL=main.css.map */

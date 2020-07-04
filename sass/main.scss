@@ -1,26 +1,49 @@
 @import './resets';
 @import './variables';
 
+@function weight($weight-name){
+    @return map-get($font-weights ,$weight-name );
+}
+
+@mixin flexCenter($direction) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+}
 
 
+// ถ้าเป็นจริงพื้นหลังสว่างขึ้น 100% นั่นคือสีขาว ส่วนตัวอักษรดำขึ้น 100% นั่นคือสีดำ
+@mixin theme($light-theme: true) {
+    @if $light-theme{
+        background: lighten($primary-color, 100%);
+        color: darken($text-color, 100%);
+    }
+    
+}
 
 body{
     background: $primary-color;
-    font-weight: map-get($font-weights, bold );
     color: $text-color;
 }
 
 .main{
+    @include flexCenter(row);
     width: 80%;
     margin: 0 auto;
+    
 
     #{&}__paragraph{
-        font-weight: map-get($font-weights , bold );
+        font-weight: weight(bold);
 
         &:hover{
             color: red;
         }
     }
+}
+
+.light{
+    @include theme($light-theme: true);
 }
 
 
